@@ -85,7 +85,8 @@ public class ClipBoard extends javax.swing.JPanel implements Serializable, KeyLi
                 this.zoomCommandGiven = 1;
                 this.zoomIn += 0.1;
                 this.zoom = true;
-            } else
+            }
+            else
             {
                 this.zoomEnabled = true;
                 this.zoomCommandGiven = -1;
@@ -105,14 +106,16 @@ public class ClipBoard extends javax.swing.JPanel implements Serializable, KeyLi
                     this.zoomEnabled = true;
                     this.zoomCommandGiven = +1;
                     this.zoom = true;
-                } else
+                }
+                else
                 {
                     this.zoomEnabled = true;
                     this.zoomCommandGiven = -1;
                     this.zoomOut += 0.1;
                     this.zoom = false;
                 }
-            } else
+            }
+            else
             {
                 this.zoomEnabled = true;
                 this.zoomCommandGiven = -1;
@@ -153,7 +156,8 @@ public class ClipBoard extends javax.swing.JPanel implements Serializable, KeyLi
                 add_object(c);
                 repaint();
             }
-        } else if (cur_but == 1)
+        }
+        else if (cur_but == 1)
         {
             if (JOptionPane.showConfirmDialog(this, "Create Line Segment?") == JOptionPane.YES_OPTION)
             {
@@ -165,7 +169,8 @@ public class ClipBoard extends javax.swing.JPanel implements Serializable, KeyLi
                 add_object(l);
                 repaint();
             }
-        } else if (cur_but == 2)
+        }
+        else if (cur_but == 2)
         {
             if (JOptionPane.showConfirmDialog(this, "Create Rectangle?") == JOptionPane.YES_OPTION)
             {
@@ -177,7 +182,8 @@ public class ClipBoard extends javax.swing.JPanel implements Serializable, KeyLi
                 add_object(r);
                 repaint();
             }
-        } else if (cur_but == 3)
+        }
+        else if (cur_but == 3)
         {
             if (JOptionPane.showConfirmDialog(this, "Create Ellipse ?") == JOptionPane.YES_OPTION)
             {
@@ -189,7 +195,8 @@ public class ClipBoard extends javax.swing.JPanel implements Serializable, KeyLi
                 add_object(e);
                 repaint();
             }
-        } else if (cur_but == 4)
+        }
+        else if (cur_but == 4)
         {
             if (JOptionPane.showConfirmDialog(this, "Create Polygon?") == JOptionPane.YES_OPTION)
             {
@@ -204,7 +211,8 @@ public class ClipBoard extends javax.swing.JPanel implements Serializable, KeyLi
                 add_object(p);
                 repaint();
             }
-        } else if (cur_but == 5)
+        }
+        else if (cur_but == 5)
         {
             deselect_object();
             select_object(evt.getPoint());
@@ -235,7 +243,8 @@ public class ClipBoard extends javax.swing.JPanel implements Serializable, KeyLi
             c.radius = sqrt((x * x + y * y));
             add_object(c);
             repaint();
-        } else if (cur_but == 1)
+        }
+        else if (cur_but == 1)
         {
             if (l != null && bclick == true)
             {
@@ -255,7 +264,8 @@ public class ClipBoard extends javax.swing.JPanel implements Serializable, KeyLi
             l.p2 = new Point2D.Double(x, y);
             add_object(l);
             repaint();
-        } else if (cur_but == 2)
+        }
+        else if (cur_but == 2)
         {
             if (r != null && bclick == true)
             {
@@ -275,7 +285,8 @@ public class ClipBoard extends javax.swing.JPanel implements Serializable, KeyLi
 
             add_object(r);
             repaint();
-        } else if (cur_but == 3)
+        }
+        else if (cur_but == 3)
         {
             if (e != null && bclick == true)
             {
@@ -294,10 +305,12 @@ public class ClipBoard extends javax.swing.JPanel implements Serializable, KeyLi
             e.center = new Point2D.Double(e.location.getX() + e.HAxis / 2, e.location.getY() + e.VAxis / 2);
             add_object(e);
             repaint();
-        } else if (cur_but == 4)
+        }
+        else if (cur_but == 4)
         {
 
-        } else if (cur_but == 5)
+        }
+        else if (cur_but == 5)
         {
             GeometricObject o = get_selected_object();
             if (o != null)
@@ -365,20 +378,20 @@ public class ClipBoard extends javax.swing.JPanel implements Serializable, KeyLi
         nobj = 0;
     }
 
-    public void move()
-    {
-
-    }
-
-    public void zoom(Point2D p1, Point2D p2, int dir)
-    {
-
-    }
-
-    public void fitscreen()
-    {
-
-    }
+//    public void move()
+//    {
+//
+//    }
+//
+//    public void zoom(Point2D p1, Point2D p2, int dir)
+//    {
+//
+//    }
+//
+//    public void fitscreen()
+//    {
+//
+//    }
 
     public void add_group(group g, String name)
     {
@@ -460,7 +473,8 @@ public class ClipBoard extends javax.swing.JPanel implements Serializable, KeyLi
                     g2.fill(c2D);
                     g2.setColor(Color.BLACK);
                 }
-            } else if (golist[i].shape == 1)
+            }
+            else if (golist[i].shape == 1)
             {
                 line l = (line) golist[i];
                 Line2D l2D = l.return2dline();
@@ -480,7 +494,8 @@ public class ClipBoard extends javax.swing.JPanel implements Serializable, KeyLi
                     g2.draw(l2D);
                     g2.setColor(Color.BLACK);
                 }
-            } else if (golist[i].shape == 2)
+            }
+            else if (golist[i].shape == 2)
             {
                 rectangle r = (rectangle) golist[i];
                 Rectangle2D r2D = r.return2Drectangle();
@@ -499,7 +514,8 @@ public class ClipBoard extends javax.swing.JPanel implements Serializable, KeyLi
                     g2.fill(r2D);
                     g2.setColor(Color.BLACK);
                 }
-            } else if (golist[i].shape == 3)
+            }
+            else if (golist[i].shape == 3)
             {
                 ellipse e = (ellipse) golist[i];
                 Ellipse2D e2D = e.returnellipse2D();
@@ -518,7 +534,8 @@ public class ClipBoard extends javax.swing.JPanel implements Serializable, KeyLi
                     g2.fill(e2D);
                     g2.setColor(Color.BLACK);
                 }
-            } else if (golist[i].shape == 4)
+            }
+            else if (golist[i].shape == 4)
             {
                 polygon p = (polygon) golist[i];
                 Polygon p2 = p.returnpolygon();
@@ -558,7 +575,8 @@ public class ClipBoard extends javax.swing.JPanel implements Serializable, KeyLi
                     repaint();
                     break;
                 }
-            } else if (golist[i].shape == 1)
+            }
+            else if (golist[i].shape == 1)
             {
                 line l = (line) golist[i];
                 if (l.return2dline().getBounds2D().contains(p))
@@ -567,7 +585,8 @@ public class ClipBoard extends javax.swing.JPanel implements Serializable, KeyLi
                     repaint();
                     break;
                 }
-            } else if (golist[i].shape == 2)
+            }
+            else if (golist[i].shape == 2)
             {
                 rectangle r = (rectangle) golist[i];
                 if (r.return2Drectangle().contains(p))
@@ -576,7 +595,8 @@ public class ClipBoard extends javax.swing.JPanel implements Serializable, KeyLi
                     repaint();
                     break;
                 }
-            } else if (golist[i].shape == 3)
+            }
+            else if (golist[i].shape == 3)
             {
                 ellipse e = (ellipse) golist[i];
                 if (e.returnellipse2D().contains(p))
@@ -585,7 +605,8 @@ public class ClipBoard extends javax.swing.JPanel implements Serializable, KeyLi
                     repaint();
                     break;
                 }
-            } else if (golist[i].shape == 4)
+            }
+            else if (golist[i].shape == 4)
             {
                 polygon p1 = (polygon) golist[i];
                 if (p1.returnpolygon().contains(p))
@@ -630,12 +651,14 @@ public class ClipBoard extends javax.swing.JPanel implements Serializable, KeyLi
             a = (float) 10.0;
             b = (float) 0.0;
 
-        } else if (o.linetype == 1)
+        }
+        else if (o.linetype == 1)
         {
             a = (float) 10.0;
             b = (float) 10.0;
 
-        } else if (o.linetype == 2)
+        }
+        else if (o.linetype == 2)
         {
             a = (float) 1.0;
             b = (float) 8.0;
@@ -645,11 +668,13 @@ public class ClipBoard extends javax.swing.JPanel implements Serializable, KeyLi
         {
             c = (float) 2.0;
 
-        } else if (o.linesize == 1)
+        }
+        else if (o.linesize == 1)
         {
             c = (float) 3.5;
 
-        } else if (o.linesize == 2)
+        }
+        else if (o.linesize == 2)
         {
             c = (float) 5.0;
 
@@ -674,25 +699,29 @@ public class ClipBoard extends javax.swing.JPanel implements Serializable, KeyLi
             c.move_to(location);
             add_object(c);
             repaint();
-        } else if (copy_object_clip[clipno].shape == 1)
+        }
+        else if (copy_object_clip[clipno].shape == 1)
         {
             line c = new line((line) copy_object_clip[clipno]);
             c.move_to(location);
             add_object(c);
             repaint();
-        } else if (copy_object_clip[clipno].shape == 2)
+        }
+        else if (copy_object_clip[clipno].shape == 2)
         {
             rectangle c = new rectangle((rectangle) copy_object_clip[clipno]);
             c.move_to(location);
             add_object(c);
             repaint();
-        } else if (copy_object_clip[clipno].shape == 3)
+        }
+        else if (copy_object_clip[clipno].shape == 3)
         {
             ellipse c = new ellipse((ellipse) copy_object_clip[clipno]);
             c.move_to(location);
             add_object(c);
             repaint();
-        } else if (copy_object_clip[clipno].shape == 4)
+        }
+        else if (copy_object_clip[clipno].shape == 4)
         {
             polygon c = new polygon((polygon) copy_object_clip[clipno]);
             c.move_to(location);
@@ -844,7 +873,8 @@ public class ClipBoard extends javax.swing.JPanel implements Serializable, KeyLi
         try
         {
             ImageIO.write(bImg, "png", f);
-        } catch (IOException ex)
+        }
+        catch (IOException ex)
         {
             Logger.getLogger(ClipBoard.class.getName()).log(Level.SEVERE, null, ex);
         }

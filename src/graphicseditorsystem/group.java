@@ -39,16 +39,20 @@ class group implements Serializable
             if (g.golist[i].shape == 0)
             {
                 golist[i] = new circle((circle) g.golist[i]);
-            } else if (g.golist[i].shape == 1)
+            }
+            else if (g.golist[i].shape == 1)
             {
                 golist[i] = new line((line) g.golist[i]);
-            } else if (g.golist[i].shape == 2)
+            }
+            else if (g.golist[i].shape == 2)
             {
                 golist[i] = new rectangle((rectangle) g.golist[i]);
-            } else if (g.golist[i].shape == 3)
+            }
+            else if (g.golist[i].shape == 3)
             {
                 golist[i] = new ellipse((ellipse) g.golist[i]);
-            } else if (g.golist[i].shape == 4)
+            }
+            else if (g.golist[i].shape == 4)
             {
                 golist[i] = new polygon((polygon) g.golist[i]);
             }
