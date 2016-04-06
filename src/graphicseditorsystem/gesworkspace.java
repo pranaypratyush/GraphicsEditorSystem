@@ -34,6 +34,7 @@ import javax.swing.JColorChooser;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -979,12 +980,10 @@ public class gesworkspace extends javax.swing.JFrame
         cur_but = 5;
         String filename = null;
         JFileChooser chooser = new JFileChooser("Open a File");
-        String[] filetype = new String[]
-        {
-            "ges"
-        };
         chooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Graphics Editor System files", "ges");
+        chooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+        chooser.setFileFilter(filter);
         FileInputStream fileinput = null;
         InputStream buffer = null;
         ObjectInputStream objectinput = null;
@@ -1240,11 +1239,11 @@ public class gesworkspace extends javax.swing.JFrame
                 canvas.zoomEnabled = true;
                 canvas.zoomCommandGiven = +1;
                 canvas.zoom = true;
-                if(canvas.zoomIn < 1.5)
+                if (canvas.zoomIn < 2.0)
                 {
                     jButton13.setEnabled(true);
                 }
-                
+
             }
             else
             {
@@ -1438,12 +1437,9 @@ public class gesworkspace extends javax.swing.JFrame
                 if (currentfilename == null)
                 {
                     JFileChooser chooser = new JFileChooser("Save a file");
-
-                    String[] filetype = new String[]
-                    {
-                        "ges"
-                    };
+                    FileNameExtensionFilter filter = new FileNameExtensionFilter("Graphics Editor System files", "ges");
                     chooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+                    chooser.setFileFilter(filter);
                     String filename = null;
                     String dirname = null;
 
@@ -2265,13 +2261,11 @@ public class gesworkspace extends javax.swing.JFrame
         cur_but = 5;
         JFileChooser chooser = new JFileChooser("Save a file");
 
-        String[] filetype = new String[]
-        {
-            "ges"
-        };
-        chooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
         String filename = null;
         String dirname = null;
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Graphics Editor System files", "ges");
+        chooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+        chooser.setFileFilter(filter);
 
         int option = chooser.showSaveDialog(null);
         if (option == JFileChooser.APPROVE_OPTION)
@@ -2546,7 +2540,7 @@ public class gesworkspace extends javax.swing.JFrame
             canvas.zoomCommandGiven = 1;
             canvas.zoomIn += 0.1;
             canvas.zoom = true;
-            if (canvas.zoomIn >= 1.5)
+            if (canvas.zoomIn >= 2.0)
             {
                 jButton13.setEnabled(false);
             }
@@ -2583,6 +2577,9 @@ public class gesworkspace extends javax.swing.JFrame
         };
         chooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
         String dirname = null;
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("PNG", "png");
+        chooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+        chooser.setFileFilter(filter);
 
         int option = chooser.showSaveDialog(null);
         if (option == JFileChooser.APPROVE_OPTION)

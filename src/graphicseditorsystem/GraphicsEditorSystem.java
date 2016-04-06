@@ -5,6 +5,8 @@
  */
 package graphicseditorsystem;
 
+import static graphicseditorsystem.gesworkspace.cur_but;
+
 /**
  *
  * @author Pranay Pratyush
@@ -17,11 +19,13 @@ public class GraphicsEditorSystem
      */
     static GeometricObject[] copy_object_clip = new GeometricObject[11];
     static group[] copy_group_clip = new group[11];
-    static ClipBoard canvas = new ClipBoard();
+    static ClipBoard canvas = null;
     static String currentfilename = "Untitled.gef";
 
     public static void main(String[] args)
     {
+        cur_but = 5;
+        canvas = new ClipBoard();
         gesworkspace g = new gesworkspace();
         g.setTitle(currentfilename + " - Graphics Editor System");
         g.setVisible(true);
