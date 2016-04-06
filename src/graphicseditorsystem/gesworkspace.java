@@ -1627,7 +1627,7 @@ public class gesworkspace extends javax.swing.JFrame
         }
         else
         {
-            canvas.get_selected_object().linetype = 0;
+            canvas.get_selected_object().linetype = 2;
             canvas.repaint();
         }
         cur_but = 5;

@@ -59,7 +59,7 @@ public class ClipBoard extends javax.swing.JPanel implements Serializable, KeyLi
     {
         initComponents();
         this.setSize(1800, 1000);
-        this.setLocation(0, 100);
+        this.setLocation(0, 131);
         this.setBackground(Color.WHITE);
     }
 
