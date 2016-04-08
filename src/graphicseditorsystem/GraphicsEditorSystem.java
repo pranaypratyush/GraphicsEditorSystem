@@ -5,8 +5,6 @@
  */
 package graphicseditorsystem;
 
-import static graphicseditorsystem.gesworkspace.cur_but;
-
 /**
  *
  * @author Pranay Pratyush
@@ -24,7 +22,6 @@ public class GraphicsEditorSystem
 
     public static void main(String[] args)
     {
-        cur_but = 5;
         canvas = new ClipBoard();
         gesworkspace g = new gesworkspace();
         g.setTitle(currentfilename + " - Graphics Editor System");
